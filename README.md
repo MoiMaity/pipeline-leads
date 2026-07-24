@@ -3,10 +3,10 @@
 A lead management application for a small sales team: a public capture form, an
 authenticated app with two roles, a lifecycle that records who did what, and a JSON API.
 
-- **Live app:** `<paste your deployment URL here>`
-- **Public capture form:** `<deployment URL>/`
-- **Team sign in:** `<deployment URL>/login`
-- **API base:** `<deployment URL>/api`
+- **Live app:** `https://pipeline-leads.onrender.com`
+- **Public capture form:** `https://pipeline-leads.onrender.com/`
+- **Team sign in:** `https://pipeline-leads.onrender.com/login`
+- **API base:** `https://pipeline-leads.onrender.com/api`
 
 Built on Node 22 with **zero runtime dependencies** — `node:http` for the server,
 `node:sqlite` for storage, `node:crypto` for password hashing, `node:test` for the suite.
