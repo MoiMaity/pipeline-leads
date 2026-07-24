@@ -1,0 +1,19 @@
+{
+  "name": "pipeline-lead-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lead management platform: public capture form, role-based app, JSON API.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/seed.js",
+    "reset": "node scripts/seed.js --reset",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify the server boots and seeds
+        run: |
+          DB_PATH=./tmp/ci.db node scripts/seed.js
+          DB_PATH=./tmp/ci.db PORT=3999 node src/server.js &
+          sleep 2
+          curl -fsS http://127.0.0.1:3999/healthz
+          curl -fsS -o /dev/null http://127.0.0.1:3999/

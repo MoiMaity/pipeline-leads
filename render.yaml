@@ -1,0 +1,16 @@
+# render.com — free web service. Note: the free plan has no persistent disk, so the
+# SQLite file resets on redeploy. The seed runs at boot, so demo credentials always work.
+# Add a disk on a paid plan (mount path /data) to keep data across deploys.
+services:
+  - type: web
+    name: pipeline-leads
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: DB_PATH
+        value: /data/app.db
+      - key: TRUST_PROXY
+        value: "1"
